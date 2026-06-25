@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leyu · 信息查询与对照参考</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f3ed;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+      color: #2c2a28;
+      line-height: 1.65;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* 主视觉卡片 */
+    .hero-card {
+      background: #ffffffef;
+      border-radius: 28px;
+      padding: 2.5rem 2rem 2.2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
+      margin-bottom: 2.4rem;
+      border: 1px solid #e6ddd0;
+    }
+
+    .hero-card h1 {
+      font-size: 2.2rem;
+      font-weight: 520;
+      letter-spacing: -0.02em;
+      color: #1f1d1b;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-card .sub {
+      font-size: 1rem;
+      color: #5f5a54;
+      border-left: 4px solid #c8b9a6;
+      padding-left: 1rem;
+      margin-top: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-highlight {
+      background: #f0ebe3;
+      border-radius: 18px;
+      padding: 1.2rem 1.6rem;
+      font-size: 0.96rem;
+      color: #383430;
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    .hero-highlight a {
+      color: #7d5f3e;
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: #cbb295;
+      text-underline-offset: 3px;
+    }
+
+    .hero-highlight a:hover {
+      color: #3f2f1e;
+      text-decoration-color: #a88560;
+    }
+
+    /* 信息卡片网格 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .card {
+      background: #fffffffa;
+      border-radius: 22px;
+      padding: 1.8rem 1.8rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      border: 1px solid #ece3d8;
+      transition: box-shadow 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: #2c2824;
+      border-bottom: 1px solid #e5dbce;
+      padding-bottom: 0.4rem;
+    }
+
+    .card p, .card li {
+      font-size: 0.96rem;
+      color: #3d3833;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card li {
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "·";
+      position: absolute;
+      left: 0.1rem;
+      color: #b8a490;
+      font-weight: 700;
+    }
+
+    /* 引用块 / 提示框 */
+    .callout {
+      background: #ede7de;
+      border-left: 4px solid #b9a386;
+      padding: 1rem 1.4rem;
+      border-radius: 0 16px 16px 0;
+      margin: 1.6rem 0;
+      font-size: 0.94rem;
+      color: #3a342d;
+    }
+
+    .callout strong {
+      font-weight: 550;
+      color: #1f1b17;
+    }
+
+    .inline-link {
+      color: #7d5f3e;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #d4c0ac;
+      font-weight: 450;
+    }
+
+    .inline-link:hover {
+      color: #3f2f1e;
+      text-decoration-color: #a88560;
+    }
+
+    /* FAQ 摘要 */
+    .faq-brief {
+      background: #faf7f2;
+      border-radius: 24px;
+      padding: 1.6rem 1.8rem;
+      margin-top: 2rem;
+      border: 1px solid #e2d6c6;
+    }
+
+    .faq-brief h3 {
+      font-weight: 470;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: #2b2621;
+    }
+
+    .faq-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed #dfd3c3;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #3f3830;
+      font-size: 0.96rem;
+    }
+
+    .faq-a {
+      color: #5d554b;
+      font-size: 0.9rem;
+      margin-top: 0.15rem;
+      padding-left: 0.6rem;
+    }
+
+    .footer-note {
+      margin-top: 2.8rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #8b8176;
+      border-top: 1px solid #e0d6c8;
+      padding-top: 1.8rem;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+      .hero-card {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero-card h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      .callout {
+        padding: 0.8rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 主视觉 -->
+  <div class="hero-card">
+    <h1>查找·对照·延伸</h1>
+    <div class="sub">基于日常查询场景的信息参考</div>
+    <p style="font-size:0.97rem; color:#4b443c; margin-bottom:0.6rem;">
+      在大量信息碎片中，快速定位关键条目、对比细节、追溯来源，是多数使用者每天都会遇到的环节。以下从用途场景及适用人群两个角度，整理了一份简洁的参考卡片。
+    </p>
+    <div class="hero-highlight">
+      🌿 如果你需要查阅特定词条、核对版本记录或延展阅读相关条目，可以随时在 <a href="https://verify-leyu.com.cn">leyu</a> 的信息库中检索对照。
+    </div>
+  </div>
+
+  <!-- 卡片网格：用途卡片 + 适合人群 -->
+  <div class="card-grid">
+
+    <!-- 用途卡片 -->
+    <div class="card">
+      <h2>日常查询 · 对照 · 延伸</h2>
+      <ul>
+        <li><strong>条目快速定位</strong> — 从常见词条、编号列表中找到目标单元，减少跳转时间。</li>
+        <li><strong>版本/状态对照</strong> — 并排比对不同时间或不同类别的条目差异，辅助判断。</li>
+        <li><strong>延伸阅读关联</strong> — 每个条目附带相关链接或注释，便于展开进一步查阅。</li>
+        <li><strong>轻量记录参考</strong> — 结构化的摘要卡片，适合作为临时备忘录或查询起点。</li>
+      </ul>
+      <div class="callout">
+        <strong>提示：</strong> 建议将常用查询关键词记为书签，配合 <a href="https://verify-leyu.com.cn" class="inline-link">leyu</a> 的条目列表进行高频对照，可提升日常查找效率。
+      </div>
+    </div>
+
+    <!-- 适合人群 -->
+    <div class="card">
+      <h2>适合人群</h2>
+      <ul>
+        <li><strong>信息整理者</strong> — 需要频繁比对术语、编号、状态标签的编辑或归档人员。</li>
+        <li><strong>延伸阅读爱好者</strong> — 习惯从一个条目出发，顺藤摸瓜浏览关联内容的读者。</li>
+        <li><strong>轻量研究者</strong> — 对某一领域进行初步调研时，需要稳定的条目索引作为参照。</li>
+        <li><strong>日常查询用户</strong> — 希望用最短时间找到特定条目，而非浏览长篇列表。</li>
+      </ul>
+      <p style="margin-top:1rem; font-size:0.93rem; color:#5d544a;">
+        无论你属于哪一类，保持查询结构的简洁性和条目之间的可对照性，是这套信息组织的基本出发点。
+      </p>
+    </div>
+  </div>
+
+  <!-- 自然链接段落（嵌入句子，不用“访问/进入/点击”等词） -->
+  <div style="margin: 2rem 0 1.2rem; font-size:0.97rem; color:#3d3833; background:#fcf9f5; padding:1.2rem 1.6rem; border-radius:20px; border:1px solid #e9dfd1;">
+    <p style="margin-bottom:0.6rem;">
+      在查阅或对照过程中，如果你希望直接打开条目索引页面，可以将 <a href="https://verify-leyu.com.cn" class="inline-link">leyu</a> 设为浏览器书签栏中的固定链接，便于随时调取。
+    </p>
+    <p>
+      日常使用中，透过条目标题和标签即可快速定位，不需要每次都重新搜索。这也是很多使用者反馈“节省反复翻找时间”的主要原因。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-brief">
+    <h3>常见问题摘要</h3>
+    <div class="faq-item">
+      <div class="faq-q">Q：条目更新频率大概是多久？</div>
+      <div class="faq-a">通常会根据信息源变动进行同步，无固定周期，但主要条目保持长期稳定。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：能否直接通过链接定位某个具体条目？</div>
+      <div class="faq-a">部分条目支持锚点或参数定位，具体可参考页面内索引结构。如需固定条目，建议使用书签配合检索。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：是否有移动端适配？</div>
+      <div class="faq-a">当前页面以信息卡片形式呈现，在手机浏览器上可正常阅读和操作，没有额外应用依赖。</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    信息参考页 · 卡片式摘要
+  </div>
+
+</div>
+</body>
+</html>
