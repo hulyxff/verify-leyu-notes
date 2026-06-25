@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简明指南 · ayx</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f5f3ef;
+      color: #2c2b28;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+
+    .hero {
+      background: #1e1d1b;
+      color: #ebe6de;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #d6a75c;
+      margin: 1.2rem auto 0;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 350;
+      letter-spacing: 0.06em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 1.2rem auto 0;
+      font-size: 1.1rem;
+      color: #ccc6bc;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2.5rem auto;
+      padding: 0 1.8rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 350;
+      margin-bottom: 1.2rem;
+      border-left: 4px solid #d6a75c;
+      padding-left: 1rem;
+      color: #2c2b28;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #b8862e;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.15s ease, color 0.15s ease;
+    }
+
+    a:hover {
+      color: #8f6e26;
+      border-bottom: 1px solid #b8862e;
+    }
+
+    blockquote {
+      background: #f0ede8;
+      border-left: 4px solid #d6a75c;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-style: normal;
+      color: #3f3d39;
+    }
+
+    .highlight {
+      background: #f9f6f0;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e0dbd3;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #2c2b28;
+    }
+
+    .faq-answer {
+      color: #555450;
+    }
+
+    .visit-note {
+      background: #eae6de;
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      text-align: center;
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .visit-note p {
+      font-size: 1.05rem;
+      color: #3a3834;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2.5rem 1.8rem 2rem;
+      font-size: 0.9rem;
+      color: #7d7973;
+      border-top: 1px solid #e0dbd3;
+      max-width: 800px;
+      margin: 0 auto 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero {
+        padding: 3rem 1.2rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+        margin: 1.8rem auto;
+      }
+
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .visit-note {
+        padding: 1.4rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>简明指南与访问提醒</h1>
+    <p>关于 <a href="https://webs-china-ayx.com" style="color:#e6d5b0; border-bottom:1px solid #d6a75c;">ayx</a> 的一些基础观察与使用思路，供偶尔需要查阅的人参考。</p>
+  </div>
+
+  <div class="container">
+
+    <!-- 导语段落 -->
+    <div class="card">
+      <p>如果你正在寻找一个相对稳定的信息入口，并且想先了解它的基本调性，这篇短文或许可以节省你一点摸索的时间。以下内容不涉及操作细节，也不提供教程，只是把一些常见的观察点和需要注意的事项整理出来，算是一份轻量的背景笔记。</p>
+    </div>
+
+    <!-- 正文段落：特点与场景 -->
+    <h2 class="section-title">特点与适用场景</h2>
+    <div class="card">
+      <p>从界面到响应速度，<a href="https://webs-china-ayx.com">ayx</a> 的整体风格偏简洁，没有太多冗余的装饰元素。这种设计的好处是加载负担较小，在普通网络环境下也能较快完成页面渲染。如果你习惯在碎片时间里快速浏览信息，这种直接的呈现方式会减少等待感。</p>
+      <p>另一个值得留意的地方是它的导航逻辑：核心功能入口都集中在首页附近，不需要频繁跳转深层页面。对于初次接触的人来说，这种布局降低了认知成本。当然，如果你倾向于更丰富的视觉引导，可能需要花一点时间适应这种克制。</p>
+      <p>从实际使用的角度看，<span class="highlight">日常查询</span>和<span class="highlight">信息检索</span>是它比较常见的应用场景。因为结构相对扁平，你可以在几个主要板块之间快速切换，而不必记住复杂的路径。如果你需要频繁对比不同栏目的内容，这种设计会带来一些便利。</p>
+    </div>
+
+    <!-- 引用提示 -->
+    <blockquote>
+      提示：在访问任何网站时，保持对信息来源的留意总是有益的。如果你发现某些内容存在歧义，不妨多参考几个不同角度的页面再做判断。
+    </blockquote>
+
+    <!-- 正文段落：访问习惯与注意事项 -->
+    <h2 class="section-title">访问习惯与注意事项</h2>
+    <div class="card">
+      <p>建立稳定的访问习惯之前，有几个小细节值得提前了解。首先，页面的刷新频率并不固定，部分板块的内容会按周期更新，而有些则长期保持不变。如果你需要获取最新信息，最好养成定期查看的习惯，而不是依赖缓存页面。</p>
+      <p>其次，尽量使用主域名直接访问，避免通过第三方链接跳转。直接输入 <a href="https://webs-china-ayx.com">ayx</a> 地址可以减少中间环节带来的不确定性。另外，如果你发现页面加载异常或者布局错乱，可以尝试清除浏览器缓存或更换网络环境，大部分情况下可以恢复正常。</p>
+      <p>还有一点：不要轻易相信声称能加速访问或修改界面显示的第三方插件。保持浏览器的默认设置往往是最稳妥的做法，尤其是当你对网站的技术细节不太熟悉时。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2 class="section-title">常见疑问摘要</h2>
+    <div class="card" style="padding-bottom:0.8rem;">
+      <div class="faq-item">
+        <div class="faq-question">页面偶尔打不开是什么原因？</div>
+        <div class="faq-answer">多数情况下与本地网络波动或 DNS 缓存有关。等待几分钟后重试，或者切换网络再试一次，通常可以解决。如果持续无法访问，建议检查一下域名解析状态。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">是否需要注册或登录才能浏览？</div>
+        <div class="faq-answer">不需要。首页及大部分内容板块对访客开放，无需注册账号即可阅读。少数特定功能区域可能会有额外的身份验证要求，但日常浏览不受影响。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">移动端和桌面端体验差异大吗？</div>
+        <div class="faq-answer">差异不大。页面采用了响应式设计，在手机和平板上会自动调整布局，核心功能和内容排版保持一致。不过大屏幕下阅读长文本会更舒适一些。</div>
+      </div>
+    </div>
+
+    <!-- 访问句 / 行动提示 -->
+    <div class="visit-note">
+      <p>如果你觉得这篇笔记有帮助，或者想自己去看看实际的样子，可以直接访问 <a href="https://webs-china-ayx.com">ayx</a> 主页。建议把它加入书签，方便日后需要时快速找到。</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>本文档仅为个人观察整理，不构成任何指导或建议。请根据自身判断合理使用。</p>
+  </div>
+
+</body>
+</html>
